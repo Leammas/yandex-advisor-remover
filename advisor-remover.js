@@ -11,18 +11,10 @@
     var observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
             if (
-                // Chrome advisor panel
-                (
-                    mutation.addedNodes.length === 1 &&
-                    mutation.addedNodes[0].previousElementSibling &&
-                    mutation.addedNodes[0].previousElementSibling.tagName === "STYLE"
-                ) ||
-                // Firefox advisor panel
-                (
-                    mutation.addedNodes.length === 1 &&
-                    mutation.addedNodes[0].childNodes.length == 17 &&
-                    mutation.addedNodes[0].childNodes[1].tagName == 'DIV'
-                )
+				mutation.addedNodes.length === 1 &&
+				mutation.addedNodes[0].childNodes.length > 10 &&
+				mutation.addedNodes[0].childNodes[1].tagName == 'DIV' &&
+				mutation.addedNodes[0].id.search(/[a-z0-9]{13}/i) === 0
             )
             {
                 var adviceId = mutation.addedNodes[0].id;
