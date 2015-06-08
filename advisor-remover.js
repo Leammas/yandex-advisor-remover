@@ -14,7 +14,7 @@
 				mutation.addedNodes.length === 1 &&
 				mutation.addedNodes[0].childNodes.length > 10 &&
 				mutation.addedNodes[0].childNodes[1].tagName == 'DIV' &&
-				mutation.addedNodes[0].id.search(/[a-z0-9]{13}/i) === 0
+				mutation.addedNodes[0].id.search(/^[a-z0-9]{13}$/i) === 0
             )
             {
                 var adviceId = mutation.addedNodes[0].id;
