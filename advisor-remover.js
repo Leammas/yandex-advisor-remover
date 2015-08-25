@@ -35,7 +35,6 @@
                         document.getElementsByTagName("body")[0].style.marginTop = "-38px";
                         // Bye advisor
                         observer.disconnect();
-                        ga('send', 'event', 'YandexHelper', 'Hide');
                     }
                 });
             });
